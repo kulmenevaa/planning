@@ -1,0 +1,644 @@
+:root body.dark#admin {
+    --darkblue: 255, 255, 255;
+    --orange: 255, 255, 255;
+    --taupe: 156, 163, 175;
+    --white: 31, 41, 55;
+    --gray: 55, 65, 81;
+    --sky: 55, 65, 81;
+}
+
+/* Start: Sidebar */
+.admin aside {
+    width: 18rem;
+    height: 100%;
+    max-height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    border-right-width: 1px;
+    border-color: rgb(var(--gray));
+    transition: all .3s ease;
+}
+.admin.close-aside aside {
+    left: -18rem;
+}
+.admin aside .sidebar-wrapper {
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgb(var(--white));
+}
+.admin aside .sidebar-wrapper,
+.admin aside .sidebar-wrapper .sidebar-footer {
+    padding: 0.75rem;
+}
+.admin aside .sidebar-wrapper .sidebar-footer {
+    display: flex;
+    align-items: center;
+    border-top-width: 1px;
+    border-color: rgb(var(--gray));
+    height: 55px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(var(--white));
+}
+.admin aside .sidebar-wrapper .sidebar-footer ul li a span {
+    flex: 1 1 0%;
+    margin-left: 0.75rem;
+    white-space: nowrap;
+}
+.admin aside .sidebar-wrapper .sidebar-content {
+    padding-bottom: 55px;
+    position: relative;
+}
+.admin aside .sidebar-wrapper .sidebar-content .logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 0.625rem;
+    margin-bottom: 1.25rem;
+}
+.admin aside .sidebar-wrapper .sidebar-content .logo .brand {
+    display: inline-flex;
+}
+.admin aside .sidebar-wrapper .sidebar-content .logo .brand img {
+    margin-right: 0.75rem;
+    height: 2.5rem;
+}
+.admin aside .sidebar-wrapper .sidebar-content .logo .brand span {
+    align-self: center;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.admin aside .sidebar-wrapper .sidebar-content .logo .hide-aside {
+    cursor: pointer;
+    display: none;
+    margin-top: 0.25rem;
+    font-size: 1.5rem;
+}
+.admin aside .sidebar-wrapper .sidebar-content ul.main-menu {
+    margin-top: 1.5rem;
+}
+.admin aside .sidebar-wrapper .sidebar-content ul.main-menu > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0.3rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0.3rem * var(--tw-space-y-reverse));
+}
+.admin aside .sidebar-wrapper .sidebar-content ul.main-menu li.active a, 
+.admin aside .sidebar-wrapper .sidebar-content ul.main-menu li.active a:hover,
+.admin aside .sidebar-wrapper .sidebar-content ul.main-menu li.active a i,
+.admin aside .sidebar-wrapper .sidebar-content ul.main-menu li.active button,
+.admin aside .sidebar-wrapper .sidebar-content ul.main-menu li.active button i,
+.admin aside .sidebar-wrapper .sidebar-content ul.main-menu li.active ul.sub-menu li.active a  {
+    color: rgb(var(--orange));
+}
+.admin aside .sidebar-wrapper .sidebar-content ul.main-menu li.active a::before {
+    content: '';
+    position: fixed;
+    display: block;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-left: 8px solid rgb(var(--orange));
+    border-bottom: 6px solid transparent;
+}
+.admin.close-aside aside .sidebar-wrapper .sidebar-content ul.main-menu li.active a::before {
+    display: none;
+}
+.admin aside .sidebar-wrapper .sidebar-content ul.main-menu li a span.badge {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75rem;
+    margin-left: 0.75rem;
+    width: 0.75rem;
+    height: 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    border-radius: 9999px;
+    color: rgb(var(--white));
+    background-color: rgb(var(--lightblue));
+}
+.admin aside .sidebar-wrapper .sidebar-content ul.main-menu li a i,
+.admin aside .sidebar-wrapper .sidebar-content ul.main-menu li button i {
+    color: rgb(var(--taupe));
+}
+.admin aside .sidebar-wrapper .sidebar-content ul.main-menu li button .rotate {
+    transition: all .3s ease;
+}
+.rotate.rotate90 {
+    --tw-rotate: 90deg;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) 
+               skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) 
+               scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.rotate-dropdown.rotate180 {
+    --tw-rotate: 180deg;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) 
+               skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) 
+               scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.admin aside .sidebar-wrapper .sidebar-content ul.main-menu li a,
+.admin aside .sidebar-wrapper .sidebar-content ul.main-menu li button,
+.admin aside .sidebar-wrapper .sidebar-footer ul li a,
+.admin aside .sidebar-wrapper .sidebar-content ul.main-menu li ul.sub-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    color: rgb(var(--taupe));
+    border-radius: 0.5rem;
+    width: 100%;
+}
+.admin aside .sidebar-wrapper .sidebar-content ul.main-menu li a i,
+.admin aside .sidebar-wrapper .sidebar-content ul.main-menu li button i,
+.admin aside .sidebar-wrapper .sidebar-footer ul li a i,
+.admin aside .sidebar-wrapper .sidebar-content ul.main-menu li ul.sub-menu li a i {
+    font-size: 1.25rem;
+}
+.admin aside .sidebar-wrapper .sidebar-content ul.main-menu li a:hover,
+.admin aside .sidebar-wrapper .sidebar-content ul.main-menu li button:hover  {
+    background-color: rgb(var(--sky));
+}
+.admin aside .sidebar-wrapper .sidebar-content ul.main-menu li a span.name,
+.admin aside .sidebar-wrapper .sidebar-content ul.main-menu li button span.name {
+    flex: 1 1 0%;
+    margin-left: 0.75rem;
+    white-space: nowrap;
+    text-align: left;
+}
+.admin aside .sidebar-wrapper .sidebar-content ul.main-menu li ul.sub-menu {
+    display: none;
+    padding: 0.3rem 0;
+}
+.admin aside .sidebar-wrapper .sidebar-content ul.main-menu li ul.sub-menu li a {
+    padding-left: 2.75rem;
+}
+@media (max-width: 640px) {
+    .admin aside {
+        width: 100%;
+        left: 0;
+    }
+    .admin.close-aside aside {
+        width: 0;
+    }
+}
+/* End: Sidebar */
+
+/* Start: Main */
+.admin main {
+    padding-left: 18rem;
+    background-color: rgb(var(--white));    
+    min-height: 100vh;
+    height: 100%;
+    transition: all .3s ease;
+}
+.admin.close-aside main {
+    padding-left: 0;
+}
+.admin.close-aside .modal {
+    padding-left: 0;
+}
+.admin main nav.admin-nav {
+    position: relative;
+    padding: 0.75rem 1.5rem;
+    background-color: rgb(var(--white));
+    border-bottom-width: 1px;
+    border-color: rgb(var(--gray));
+}
+.admin main nav.admin-nav.sticky-nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+}
+.admin main nav.admin-nav .nav-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 3rem;
+}
+.admin main nav.admin-nav .nav-wrapper .toggle-sidebar {
+    display: flex;
+    align-items: center;
+}
+.admin main nav.admin-nav .nav-wrapper .toggle-sidebar button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem;
+    color: rgb(var(--taupe));
+    border-radius: 0.5rem;
+    border-width: 1px;
+    border-color: rgb(var(--gray));
+}
+.admin main nav.admin-nav .nav-wrapper .toggle-sidebar button:hover,
+.admin main nav.admin-nav .nav-wrapper .toggle-sidebar button:focus {
+    background-color: rgb(var(--gray));
+}
+.admin main nav.admin-nav .nav-wrapper .toggle-sidebar button i {
+    font-size: 1.25rem;
+}
+.admin main nav.admin-nav .nav-wrapper .nav-content {
+    position: relative;
+    display: inline-flex;
+}
+.admin main nav.admin-nav .nav-wrapper .nav-content .switch-theme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2rem;
+}
+.admin main nav.admin-nav .nav-wrapper .nav-content .switch-theme i {
+    position: absolute;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all .3s ease;
+    color: rgb(var(--taupe));
+}
+.admin main nav.admin-nav .nav-wrapper .nav-content .switch-theme i.sun,
+.admin main nav.admin-nav .nav-wrapper .nav-content .switch-theme.active i.moon {
+    opacity: 0;
+    pointer-events: none;
+}
+.admin main nav.admin-nav .nav-wrapper .nav-content .switch-theme.active i.sun {
+    opacity: 1;
+    pointer-events: auto;
+}
+.admin main nav.admin-nav .nav-wrapper .nav-content .toggle-profile-menu {
+    border-radius: 9999px;
+}
+.admin main nav.admin-nav .nav-wrapper .nav-content .toggle-profile-menu:focus {
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(209 213 219 / var(--tw-ring-opacity));
+}
+.admin main nav.admin-nav .nav-wrapper .nav-content .toggle-profile-menu img {
+    border-radius: 9999px;
+    width: 2.2rem;
+    height: 2.2rem;
+}
+.admin main nav.admin-nav .nav-wrapper .nav-content .profile-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    margin-top: 3.4rem;
+    z-index: 50;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    list-style-type: none;
+    background-color: rgb(var(--white));
+    border-radius: 0.25rem;
+    --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.admin main nav.admin-nav .nav-wrapper .nav-content .profile-menu .profile-menu-info {
+    padding: 0.75rem 1rem;
+}
+.admin main nav.admin-nav .nav-wrapper .nav-content .profile-menu .profile-menu-info span {
+    display: block;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+.admin main nav.admin-nav .nav-wrapper .nav-content .profile-menu .profile-menu-info span.info1 {
+    color: rgb(var(--taupe));
+}
+.admin main nav.admin-nav .nav-wrapper .nav-content .profile-menu .profile-menu-info span.info2 {
+    font-weight: 500;
+    color: rgb(var(--taupe));
+}
+.admin main nav.admin-nav .nav-wrapper .nav-content .profile-menu ul li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: rgb(var(--taupe));
+}
+.admin main nav.admin-nav .nav-wrapper .nav-content .profile-menu ul li a:hover {
+    background-color: rgb(var(--sky))
+}
+@media (max-width: 640px) {
+    .admin main {
+        padding-left: 0;
+    }
+    .admin aside .sidebar-wrapper .sidebar-content .logo .hide-aside {
+        display: block;
+    }
+}
+
+/* Start: Section */
+.admin main .section {
+    padding: 1rem 1.5rem;
+}
+.admin main .section .title-page {
+    display: flex;
+    align-items: center;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+    border-bottom: 1px solid rgb(var(--gray));
+    padding-bottom: 0.5rem;
+}
+.admin main .section .title-page .action-block {
+    display: flex;
+}
+.admin main .section .title-page .title {
+    flex: 1 1 0%;
+}
+.admin main .section .title-page .title h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+    color: rgb(var(--darkblue));
+}
+.admin main .section .title-page .title-action {
+    margin-top: 0.5rem
+}
+.admin main .section .title-page .title-action a i {
+    font-size: 1.3rem;
+    margin-right: 0.25rem;
+}
+.admin main .section .title-page .title-action.table-control button i.rotate-dropdown {
+    font-size: 0.8rem;
+    margin-left: 0.25rem;
+    transition: .3s ease;
+}
+/* End: Section */
+
+/* Start: Table */
+.admin main .section .table-wrapper {
+    position: relative;
+    overflow-x: auto;
+}
+.admin main .section .table-wrapper .table {
+    width: 100% !important;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    text-align: left;
+    color: rgb(var(--taupe));
+    border-width: 1px;
+    border-color: rgb(var(--gray));
+}
+.admin main .section .table-wrapper .table thead,
+.admin main .section .table-wrapper .table tfoot {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    text-transform: uppercase;
+    background-color: rgb(var(--gray), .3);
+}
+.admin main .section .table-wrapper .table thead th,
+.admin main .section .table-wrapper .table tfoot th {
+    border: 0;
+    padding: 1rem 1.5rem;
+}
+.admin main .section .table-wrapper .table tbody td {
+    padding: 1rem 1.5rem;
+}
+.admin main .section .table-wrapper .table tbody tr {
+    background-color: transparent;
+    border-bottom-width: 1px;
+}
+.admin main .section .table-wrapper .table tbody tr:hover {
+    background-color: rgb(var(--sky));
+}
+
+/* Start: Upload Input + Preview */
+.admin .upsert .form-upload .image-upload {
+    position: relative;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.375rem;
+    border-width: 1px;
+    border-style: dashed;
+    border-color: rgb(var(--gray));
+    padding: 1.25rem 1.5rem;
+    margin-top: 0.6rem;
+    text-align: center;
+    font-weight: 500;
+}
+.admin .upsert .form-upload .image-upload i {
+    margin: 0 auto;
+    font-size: 4rem; 
+    color: rgb(var(--taupe), .4);
+}
+.admin .upsert .form-upload .image-upload .image-upload-form {
+    display: flex;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: rgb(var(--taupe));
+}
+.admin .upsert .form-upload .image-upload .image-upload-form input,
+.admin .upsert .form-upload .image-upload .image-upload-form input:focus {
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+}
+.admin .upsert .form-upload .image-upload .image-upload-info {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: rgb(var(--taupe));
+}
+.admin .upsert .form-upload .preview-image {
+    display: none;
+    position: relative;
+    height: 250px;
+    width: 100%;
+    border-width: 1px;
+    margin-top: 0.6rem;
+    border-color: rgb(var(--gray));
+    transition: .3s ease;
+}
+.admin .upsert .form-upload .preview-image img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+}
+.admin .upsert .form-upload .close-preview-image {
+    position: absolute;
+    top: 0.5rem; 
+    right: 0.5rem;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: rgb(var(--taupe));
+    cursor: pointer;
+    transition: .3s ease;
+}
+.admin .upsert .form-upload .close-preview-image i {
+    color: rgb(var(--white));
+    font-size: 1.5rem;
+}
+/* End: Upload Input */
+
+/* Start: Breadcrumb */
+.admin nav.breadcrumb {
+    display: flex;
+    padding: 1rem 1.5rem;
+    color: rgb(var(--taupe));
+    background-color: rgb(var(--sky), .4);
+    box-shadow:0 .1rem 1rem rgba(0,0,0,.1);
+}
+.admin nav.breadcrumb ol,
+.admin nav.breadcrumb ol li,
+.admin nav.breadcrumb ol li a {
+    display: inline-flex;
+    align-items: center;
+}
+.admin nav.breadcrumb ol li:not(:last-child):after {
+    content: '/';
+    margin: 0 0.8rem;
+}
+.admin nav.breadcrumb ol li a,
+.admin nav.breadcrumb ol li span {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+}
+.admin nav.breadcrumb ol li a {
+    color: rgb(var(--taupe));
+}
+.admin nav.breadcrumb ol li span {
+    color: rgb(var(--orange));
+}
+.admin nav.breadcrumb ol li a:hover {
+    color: rgb(var(--lightblue));
+}
+/* End: Breadcrumb */
+
+/* Start: Upsert */
+/* Start: Create + Edit */
+.admin .upsert .buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.admin .upsert .tabs .tabs-menu {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    text-align: center;
+    color: rgb(var(--taupe));
+    border-bottom-width: 1px;
+    border-color: rgb(var(--gray));
+}
+.admin .upsert .tabs .tabs-menu li {
+    display: inline-block;
+    padding: 1rem;
+    margin-bottom: -1px;
+    border-color: rgb(var(--gray));
+    border-bottom-width: 1px;
+    background-color: rgb(var(--white))
+}
+.admin .upsert .tabs .tabs-menu li.active {
+    color: rgb(var(--darkblue));
+    border-bottom-width: 1px;
+    border-color: rgb(var(--darkblue));
+}
+.admin .upsert .tabs .tabs-menu li:not(.active) {
+    cursor: pointer;
+}
+.admin .upsert .tabs .tabs-content {
+    margin-top: 0.9rem;
+    display: none;
+}
+.admin .upsert .tabs .tabs-content.active {
+    display: block;
+}
+.admin .upsert .right-block {
+    margin-top: 0.5rem;
+}
+.admin .upsert .right-block,
+.admin .upsert .left-block {
+    margin-bottom: 1rem;
+}
+.admin .upsert .right-block .publication-item:not(:first-child) {
+    padding: 0.8rem 0;
+}
+.admin .upsert .right-block .publication-item p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: rgb(var(--taupe));
+}
+.admin .upsert .right-block .publication-item .publication-field {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+}
+.admin .upsert .right-block .publication-item .publication-field:last-child {
+    margin: 0;
+}
+.admin .upsert .right-block .publication-item .publication-field input {
+    width: 1rem;
+    height: 1rem;
+}
+.admin .upsert .right-block .publication-item .publication-field label {
+    margin-left: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    color: rgb(var(--taupe));
+}
+.admin .upsert .right-block .publication-item label.publication-field-checkbox {
+    display:flex;
+    align-items:center;
+    margin-top: 0.5rem;
+    margin-left: 0;
+}
+.admin .upsert .right-block .publication-item label.publication-field-checkbox span {
+    margin-left: 0.6rem;
+}
+body.dark .upsert .admin .right-block .publication-item .publication-field label {
+    color: rgb(var(--taupe));
+}
+/* End: Upsert */
+
+/* Start: Packages */
+.tox-tinymce {
+    border-radius: 0.5rem !important;
+    border-width: 1px !important;
+    border-color: rgb(var(--gray)) !important;
+    height: 411px !important;
+}
+.max-textarea .tox-tinymce {
+    height: 472px !important;
+}
+.tox.tox-tinymce.focused {
+    outline: 2px solid transparent !important;
+    outline-offset: 2px !important;
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color) !important;
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color) !important;
+    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000) !important;
+    --tw-border-opacity: 1 !important;
+    border-color: rgb(var(--lightblue)) !important;
+}
+.swal2-container {
+    z-index: 1300 !important;
+}
+/* End: Packages */

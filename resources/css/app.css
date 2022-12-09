@@ -1,0 +1,14 @@
+/* Libraries */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('/resources/js/packages/bvi/css/bvi.min.css');
+@import url('/resources/js/packages/fullpage/fullpage.min.css');
+@import url('/resources/js/packages/barryvdh/colorbox.css');
+@import url('/resources/js/packages/datatable/dataTables.css');
+
+/* Custom */
+@import url('/resources/css/custom/global.css');
+@import url('/resources/css/custom/site.css');
+@import url('/resources/css/custom/admin.css');
